@@ -1,34 +1,28 @@
-import errorHandler from 'errorhandler'
+import errorhandler from 'errorhandler'
 import { Client } from 'pg'
 
 import app from './app'
 
-const connectDb = async () => {
-  try {
-    const client = new Client({
-      user: process.env['PGUSER'],
-      host: process.env['PGHOST'],
-      database: process.env['PGDATABASE'],
-      password: process.env['PGPASSWORD'],
-      port: 5432,
-    })
-    await client.connect()
-    const res1 = await client.query('SELECT * FROM journeys')
-    const res2 = await client.query('SELECT * FROM stations')
-
-    if (res1 && res2) {
-      console.log('  Database connected!')
-    }
-    await client.end()
-  } catch (error) {
-    console.log(error)
-  }
-}
+// const connectDb = async () => {
+//   try {
+//     const client = new Client({
+//       user: process.env['PGUSER'],
+//       host: process.env['PGHOST'],
+//       database: process.env['PGDATABASE'],
+//       password: process.env['PGPASSWORD'],
+//       port: 5432,
+//     })
+//     await client.connect()
+//     console.log('  Database connected!')
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 
 const start = async () => {
   try {
     //	Start DB connection
-    await connectDb()
+    // await connectDb()
     // Start Express server
     await app.listen(app.get('port'), () => {
       console.log(
@@ -52,4 +46,4 @@ start()
 /**
  * Error Handler. Provides full stack - remove for production
  */
-app.use(errorHandler())
+app.use(errorhandler())

@@ -1,5 +1,4 @@
 import dotenv from 'dotenv'
-dotenv.config()
 import fs from 'fs'
 
 import logger from './logger'

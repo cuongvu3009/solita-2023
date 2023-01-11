@@ -7,16 +7,16 @@ import apiErrorHandler from './middlewares/apiErrorHandler'
 import compression from 'compression'
 import cors from 'cors'
 
-const corsOptions = {
-  origin: '*',
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-}
+// const corsOptions = {
+//   origin: '*',
+//   credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// }
 
 dotenv.config({ path: '.env' })
 const app = express()
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 // Express configuration
 app.set('port', process.env.PORT || 1234)

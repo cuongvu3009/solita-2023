@@ -12,7 +12,7 @@ const getAllStations = async (
 
     pool.query(q, (err: any, data) => {
       if (err) throw new InternalServerError(err)
-      return res.status(200).json(data.rows)
+      return res.status(200).json(data)
     })
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {

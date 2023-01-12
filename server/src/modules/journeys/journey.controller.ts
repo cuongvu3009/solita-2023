@@ -8,7 +8,8 @@ const getAllJourneys = async (
   next: NextFunction
 ) => {
   try {
-    const response = await journeyService.getAll()
+    const { page, size } = req.query
+    const response = await journeyService.getAll(page, size)
     return res.json(response)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {

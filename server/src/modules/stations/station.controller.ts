@@ -8,7 +8,8 @@ const getAllStations = async (
   next: NextFunction
 ) => {
   try {
-    const response = await stationService.getAll()
+    const { page, size } = req.query
+    const response = await stationService.getAll(page, size)
     return res.json(response)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {

@@ -1,23 +1,27 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { MDBDataTable } from 'mdbreact';
+import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 
 const Stations = () => {
-  const [tableData, setTableData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [stations, setStations] = useState([]);
 
   useEffect(() => {
     const getAllStations = async () => {
       try {
-        const res = await axios.get('/api/v1/stations');
-        console.log(res.data);
-        setTableData(res.data);
+        const res = await axios.get(`/api/v1/stations?page=${page}&size=100`);
+        setStations(res.data);
       } catch (error) {
         console.log(error);
       }
     };
     getAllStations();
-  }, []);
+  }, [page]);
+
+  const nextPage = () => setPage((prev) => prev + 1);
+
+  const prevPage = () => setPage((prev) => prev - 1);
 
   const data = {
     columns: [
@@ -101,19 +105,22 @@ const Stations = () => {
         width: 100,
       },
     ],
-    rows: tableData,
+    rows: stations,
   };
 
   return (
     <>
       <Navbar />
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <MDBDataTable
-          responsive={true}
-          autoWidth={true}
-          striped={true}
-          data={data}
-        />
+        <MDBDataTable data={data} />
+        <nav>
+          <button onClick={prevPage} disabled={page === 1}>
+            Prev Page
+          </button>
+          <button onClick={nextPage} disabled={!stations.length}>
+            Next Page
+          </button>
+        </nav>
       </div>
     </>
   );

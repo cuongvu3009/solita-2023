@@ -4,20 +4,24 @@ import { MDBDataTable } from 'mdbreact';
 import Navbar from '../components/Navbar';
 
 const Journeys = () => {
-  const [tableData, setTableData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [journeys, setJourneys] = useState([]);
 
   useEffect(() => {
-    const getAllStations = async () => {
+    const getAllJourneys = async () => {
       try {
-        const res = await axios.get('/api/v1/journeys');
-        console.log(res.data);
-        setTableData(res.data);
+        const res = await axios.get(`/api/v1/journeys?page=${page}&size=100`);
+        setJourneys(res.data);
       } catch (error) {
         console.log(error);
       }
     };
-    getAllStations();
-  }, []);
+    getAllJourneys();
+  }, [page]);
+
+  const nextPage = () => setPage((prev) => prev + 1);
+
+  const prevPage = () => setPage((prev) => prev - 1);
 
   const data = {
     columns: [
@@ -77,19 +81,22 @@ const Journeys = () => {
         width: 250,
       },
     ],
-    rows: tableData,
+    rows: journeys,
   };
 
   return (
     <>
       <Navbar />
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <MDBDataTable
-          responsive={true}
-          autoWidth={true}
-          striped={true}
-          data={data}
-        />
+        <MDBDataTable data={data} />
+        <nav>
+          <button onClick={prevPage} disabled={page === 1}>
+            Prev Page
+          </button>
+          <button onClick={nextPage} disabled={!journeys.length}>
+            Next Page
+          </button>
+        </nav>
       </div>
     </>
   );

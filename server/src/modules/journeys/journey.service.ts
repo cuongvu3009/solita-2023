@@ -1,6 +1,6 @@
 import pool from '../../server'
 
-const getAll = async (page, size) => {
+const getAll = async (page: any, size: any) => {
   try {
     const result = await pool.query(
       'select * from journeys LIMIT $2 OFFSET (($1 - 1) * $2)',

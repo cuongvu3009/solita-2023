@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
-import { BadRequestError, InternalServerError } from '../../helpers/apiError'
-import pool from '../../db/db'
+import { BadRequestError } from '../../helpers/apiError'
+import stationService from './station.service'
 
 const getAllStations = async (
   req: Request,
@@ -8,12 +8,8 @@ const getAllStations = async (
   next: NextFunction
 ) => {
   try {
-    const q = 'SELECT * FROM stations LIMIT 50'
-
-    pool.query(q, (err: any, data) => {
-      if (err) throw new InternalServerError(err)
-      return res.status(200).json(data)
-    })
+    const response = await stationService.getAll()
+    return res.json(response)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -30,12 +26,8 @@ const getSingleStation = async (
 ) => {
   try {
     const { id } = req.params
-    const q = 'SELECT * FROM stations WHERE station_id = $1'
-
-    pool.query(q, [id], (err: any, data) => {
-      if (err) throw new InternalServerError(err)
-      return res.status(200).json(data.rows)
-    })
+    const response = await stationService.getOne(id)
+    res.json(response)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))

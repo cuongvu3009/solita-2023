@@ -1,0 +1,20 @@
+.navbar {
+  background-color: green;
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.title {
+  color: #fff;
+}
+
+.buttons {
+}
+
+button {
+  margin-left: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}

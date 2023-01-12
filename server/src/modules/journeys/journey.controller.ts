@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
-import { BadRequestError, InternalServerError } from '../../helpers/apiError'
-import pool from '../../db/db'
+import { BadRequestError } from '../../helpers/apiError'
+import journeyService from './journey.service'
 
 const getAllJourneys = async (
   req: Request,
@@ -8,12 +8,8 @@ const getAllJourneys = async (
   next: NextFunction
 ) => {
   try {
-    const q = 'SELECT * FROM journeys LIMIT 50'
-
-    pool.query(q, (err: any, data) => {
-      if (err) throw new InternalServerError(err)
-      return res.status(200).json(data)
-    })
+    const response = await journeyService.getAll()
+    return res.json(response)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
@@ -30,12 +26,8 @@ const getSingleJourney = async (
 ) => {
   try {
     const { id } = req.params
-    const q = 'SELECT * FROM journeys WHERE journey_id = $1'
-
-    pool.query(q, [id], (err: any, data) => {
-      if (err) throw new InternalServerError(err)
-      return res.status(200).json(data.rows)
-    })
+    const response = await journeyService.getOne(id)
+    res.json(response)
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))

@@ -16,8 +16,8 @@
 
 ## Requirements
 
--Install Node.js 18.0.0 or later version
--Install PostgreSQL 13.0.0 or later version
+- Install Node.js 18.0.0 or later version
+- Install PostgreSQL 13.0.0 or later version
 
 ## Run application on localhost
 

@@ -83,7 +83,6 @@ const Journeys = () => {
     ],
     rows: journeys,
   };
-  console.log(journeys);
 
   return (
     <>

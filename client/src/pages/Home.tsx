@@ -37,11 +37,9 @@ function Home() {
         {stations.map((s: any) => (
           <Marker latitude={s.y} longitude={s.x}>
             <div className='card'>
-              <h4 className='place'>
-                <MdRoom size={20} />
-                {s.stationname} station
-              </h4>
-              <p className='place'>({s.stationaddress})</p>
+              <MdRoom size={20} />
+              <h4 className='place'>{s.stationname} station</h4>
+              <p className='place'>({s.osoite})</p>
             </div>
           </Marker>
         ))}

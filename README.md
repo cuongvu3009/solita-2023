@@ -39,8 +39,8 @@
 
 [x] Import data from the CSV files to a database or in-memory storage <br>
 [x] Validate data before importing <br>
-[ ] Don't import journeys that lasted for less than ten seconds <br>
-[ ] Don't import journeys that covered distances shorter than 10 meters <br>
+[x] Don't import journeys that lasted for less than ten seconds <br>
+[x] Don't import journeys that covered distances shorter than 10 meters <br>
 
 ### Journey list view
 

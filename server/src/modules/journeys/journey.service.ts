@@ -3,8 +3,8 @@ import pool from '../../server'
 const getAll = async (page: any, size: any) => {
   try {
     const result = await pool.query(
-      'SELECT * FROM journeys WHERE distanceCoveredInMeters > 10 AND durationSeconds > 10 LIMIT $2 OFFSET (($1 - 1) * $2)',
-      [page, size]
+      'SELECT * FROM journeys WHERE distanceCoveredInMeters > $3 AND durationSeconds > $4 LIMIT $2 OFFSET (($1 - 1) * $2)',
+      [page, size, 10, 10]
     )
     return result?.rows
   } catch (e: any) {

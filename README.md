@@ -64,13 +64,10 @@
 [x] Station name<br>
 [x] Station address<br>
 [x] Station location on the map<br>
-[ ] Total number of journeys starting from the station<br>
-[ ] Total number of journeys ending at the station<br>
-[ ] The average distance of a journey starting from the station<br>
-[ ] The average distance of a journey ending at the station<br>
-[ ] Top 5 most popular return stations for journeys starting from the station<br>
-[ ] Top 5 most popular departure stations for journeys ending at the station<br>
-[ ] Ability to filter all the calculations per month<br>
+[x] Total number of journeys starting from the station<br>
+[x] Total number of journeys ending at the station<br>
+[x] Top 5 most popular return stations for journeys starting from the station<br>
+[x] Top 5 most popular departure stations for journeys ending at the station<br>
 
 ## Code time
 

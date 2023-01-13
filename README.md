@@ -5,14 +5,19 @@
 3. Phone: +358465339075
 4. Linkedin: https://www.linkedin.com/in/cuong-vu-duc/
 
-## Demo
+# Demo: https://www.youtube.com/watch?v=OAAIb0mdJeE
 
-https://www.youtube.com/watch?v=OAAIb0mdJeE
+## Stacks
+- React
+- Typescript
+- Node/Express
+- Postgresql
+- Mapbox
 
 ## Requirements
 
-Install Node.js 18.0.0 or later version
-Install PostgreSQL 13.0.0 or later version
+- Install Node.js 18.0.0 or later version
+- Install PostgreSQL 13.0.0 or later version
 
 ## Run application on localhost
 
@@ -66,4 +71,10 @@ Install PostgreSQL 13.0.0 or later version
 [ ] Top 5 most popular return stations for journeys starting from the station<br>
 [ ] Top 5 most popular departure stations for journeys ending at the station<br>
 [ ] Ability to filter all the calculations per month<br>
+
+## Code time
+
+- Total coding time: around 11 hours 28 minutes
+
+![image](https://user-images.githubusercontent.com/39565575/212313529-3d5e2e3a-256a-4b8e-a880-b8ad26c95396.png)
 

@@ -5,11 +5,12 @@
 3. Phone: +358465339075
 4. Linkedin: https://www.linkedin.com/in/cuong-vu-duc/
 
-## The exercise
+## Requirements
 
 Install Node.js 18.0.0 or later version
+Install PostgreSQL 13.0.0 or later version
 
-## Stuff to do
+## Run application on localhost
 
 ### To start server
 
@@ -20,44 +21,44 @@ Install Node.js 18.0.0 or later version
 ### To start client
 
 1. Run 'yarn' to install neccesary packages
-2. Add '.env' file following .env.example
-3. Run 'yarn start' to run the server
+2. Add '.env' file following .env.example (if exist)
+3. Run 'yarn start' to run the client
 
 ## Functional features
 
 ### Data import
 
-[x] Import data from the CSV files to a database or in-memory storage
-[x] Validate data before importing
-[ ] Don't import journeys that lasted for less than ten seconds
-[ ] Don't import journeys that covered distances shorter than 10 meters
+[x] Import data from the CSV files to a database or in-memory storage <br>
+[x] Validate data before importing <br>
+[ ] Don't import journeys that lasted for less than ten seconds <br>
+[ ] Don't import journeys that covered distances shorter than 10 meters <br>
 
 ### Journey list view
 
-[x] List journeys
-[x] For each journey show departure and return stations, covered distance in kilometers and duration in minutes
-[x] Pagination
-[x] Ordering per column
-[x] Searching
-[x] Filtering
+[x] List journeys <br>
+[x] For each journey show departure and return stations, covered distance in kilometers and duration in minutes <br>
+[x] Pagination <br>
+[x] Ordering per column <br>
+[x] Searching <br>
+[x] Filtering<br>
 
 ### Station list
 
-[x] List all the stations
-[x] Pagination
-[x] Ordering per column
-[x] Filtering
-[x] Searching
+[x] List all the stations<br>
+[x] Pagination<br>
+[x] Ordering per column<br>
+[x] Filtering<br>
+[x] Searching<br>
 
 ### Single station view
 
-[x] Station name
-[x] Station address
-[x] Station location on the map
-[ ] Total number of journeys starting from the station
-[ ] Total number of journeys ending at the station
-[ ] The average distance of a journey starting from the station
-[ ] The average distance of a journey ending at the station
-[ ] Top 5 most popular return stations for journeys starting from the station
-[ ] Top 5 most popular departure stations for journeys ending at the station
-[ ] Ability to filter all the calculations per month
+[x] Station name<br>
+[x] Station address<br>
+[x] Station location on the map<br>
+[ ] Total number of journeys starting from the station<br>
+[ ] Total number of journeys ending at the station<br>
+[ ] The average distance of a journey starting from the station<br>
+[ ] The average distance of a journey ending at the station<br>
+[ ] Top 5 most popular return stations for journeys starting from the station<br>
+[ ] Top 5 most popular departure stations for journeys ending at the station<br>
+[ ] Ability to filter all the calculations per month<br>

@@ -5,14 +5,19 @@
 3. Phone: +358465339075
 4. Linkedin: https://www.linkedin.com/in/cuong-vu-duc/
 
-## Demo
+# Demo: https://www.youtube.com/watch?v=OAAIb0mdJeE
 
-https://www.youtube.com/watch?v=OAAIb0mdJeE
+## Stacks
+- React
+- Typescript
+- Node/Express
+- Postgresql
+- Mapbox
 
 ## Requirements
 
-Install Node.js 18.0.0 or later version
-Install PostgreSQL 13.0.0 or later version
+-Install Node.js 18.0.0 or later version
+-Install PostgreSQL 13.0.0 or later version
 
 ## Run application on localhost
 

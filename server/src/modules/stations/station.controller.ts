@@ -20,6 +20,40 @@ const getAllStations = async (
   }
 }
 
+const getDepartJourneyFromStation = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const response = await stationService.getAllDepartureJourneys()
+    return res.json(response)
+  } catch (error) {
+    if (error instanceof Error && error.name == 'ValidationError') {
+      next(new BadRequestError('Invalid Request', error))
+    } else {
+      next(error)
+    }
+  }
+}
+
+const getReturnJourneyFromStation = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const response = await stationService.getAllReturnJourneys()
+    return res.json(response)
+  } catch (error) {
+    if (error instanceof Error && error.name == 'ValidationError') {
+      next(new BadRequestError('Invalid Request', error))
+    } else {
+      next(error)
+    }
+  }
+}
+
 const getSingleStation = async (
   req: Request,
   res: Response,
@@ -38,4 +72,9 @@ const getSingleStation = async (
   }
 }
 
-export { getAllStations, getSingleStation }
+export {
+  getAllStations,
+  getSingleStation,
+  getDepartJourneyFromStation,
+  getReturnJourneyFromStation,
+}

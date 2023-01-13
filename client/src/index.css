@@ -46,3 +46,14 @@ label {
 .container {
   padding: 10px;
 }
+
+.stats {
+  display: flex;
+  margin: 20px;
+}
+
+.left,
+.right {
+  flex: 1;
+  border: 1px solid black;
+}

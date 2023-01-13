@@ -17,6 +17,9 @@ const Navbar = () => {
         <Link to='/journeys' className='styledLink'>
           <button>Show journeys record</button>
         </Link>
+        <Link to='/stats' className='styledLink'>
+          <button>Stats</button>
+        </Link>
       </div>
     </div>
   );

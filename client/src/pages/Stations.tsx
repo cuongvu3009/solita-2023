@@ -111,16 +111,18 @@ const Stations = () => {
   return (
     <>
       <Navbar />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <MDBDataTable data={data} />
-        <nav>
-          <button onClick={prevPage} disabled={page === 1}>
-            Prev Page
-          </button>
-          <button onClick={nextPage} disabled={!stations.length}>
-            Next Page
-          </button>
-        </nav>
+      <div className='container'>
+        <div className='table'>
+          <MDBDataTable data={data} />
+          <nav>
+            <button onClick={prevPage} disabled={page === 1}>
+              Prev Page
+            </button>
+            <button onClick={nextPage} disabled={!stations.length}>
+              Next Page
+            </button>
+          </nav>
+        </div>
       </div>
     </>
   );

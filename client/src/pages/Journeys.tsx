@@ -83,20 +83,23 @@ const Journeys = () => {
     ],
     rows: journeys,
   };
+  console.log(journeys);
 
   return (
     <>
       <Navbar />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <MDBDataTable data={data} />
-        <nav>
-          <button onClick={prevPage} disabled={page === 1}>
-            Prev Page
-          </button>
-          <button onClick={nextPage} disabled={!journeys.length}>
-            Next Page
-          </button>
-        </nav>
+      <div className='container'>
+        <div className='table'>
+          <MDBDataTable data={data} />
+          <nav>
+            <button onClick={prevPage} disabled={page === 1}>
+              Prev Page
+            </button>
+            <button onClick={nextPage} disabled={!journeys.length}>
+              Next Page
+            </button>
+          </nav>
+        </div>
       </div>
     </>
   );

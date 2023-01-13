@@ -20,3 +20,29 @@ code {
 .styledLink {
   color: inherit;
 }
+
+.card {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+label {
+  width: max-content;
+  color: tomato;
+  font-size: 13px;
+  border-bottom: 0.5px solid tomato;
+  margin: 3px 0;
+}
+
+.table {
+  text-align: center;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.container {
+  padding: 10px;
+}

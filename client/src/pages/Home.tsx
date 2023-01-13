@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Map, { Marker } from 'react-map-gl';
+import Map, { Marker, Popup } from 'react-map-gl';
 import { useState, useEffect } from 'react';
 import { MdRoom } from 'react-icons/md';
 import Navbar from '../components/Navbar';
@@ -11,7 +11,7 @@ function Home() {
     const getAllStations = async () => {
       try {
         const res = await axios.get('/api/v1/stations');
-        console.log(res.data);
+
         setStations(res.data);
       } catch (error) {
         console.log(error);
@@ -36,7 +36,13 @@ function Home() {
       >
         {stations.map((s: any) => (
           <Marker latitude={s.y} longitude={s.x}>
-            <MdRoom size={33} />
+            <div className='card'>
+              <h4 className='place'>
+                <MdRoom size={20} />
+                {s.stationname} station
+              </h4>
+              <p className='place'>({s.stationaddress})</p>
+            </div>
           </Marker>
         ))}
       </Map>

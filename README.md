@@ -72,3 +72,9 @@
 [ ] Top 5 most popular departure stations for journeys ending at the station<br>
 [ ] Ability to filter all the calculations per month<br>
 
+## Code time
+
+- Total coding time: around 11 hours 28 minutes
+
+![image](https://user-images.githubusercontent.com/39565575/212313529-3d5e2e3a-256a-4b8e-a880-b8ad26c95396.png)
+

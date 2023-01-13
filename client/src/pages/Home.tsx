@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Map, { Marker, Popup } from 'react-map-gl';
+import Map, { Marker } from 'react-map-gl';
 import { useState, useEffect } from 'react';
 import { MdRoom } from 'react-icons/md';
 import Navbar from '../components/Navbar';

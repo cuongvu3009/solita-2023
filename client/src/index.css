@@ -22,8 +22,8 @@ code {
 }
 
 .card {
-  width: 10px;
-  height: 10px;
+  width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

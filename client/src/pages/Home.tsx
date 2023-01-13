@@ -36,7 +36,7 @@ function Home() {
       >
         {stations.map((s: any) => (
           <Marker latitude={s.y} longitude={s.x}>
-            <div className='card'>
+            <div className='card' id={s.station_id}>
               <MdRoom size={20} />
               <h4 className='place'>{s.stationname} station</h4>
               <p className='place'>({s.osoite})</p>

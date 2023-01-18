@@ -8,6 +8,7 @@
 # Demo: https://www.youtube.com/watch?v=OAAIb0mdJeE
 
 ## Stacks
+
 - React
 - Typescript
 - Node/Express
@@ -16,6 +17,7 @@
 
 ## Requirements
 
+- Install npm or yarn
 - Install Node.js 18.0.0 or later version
 - Install PostgreSQL 13.0.0 or later version
 
@@ -32,6 +34,10 @@
 1. Run 'yarn' to install neccesary packages
 2. Add '.env' file following .env.example (if exist)
 3. Run 'yarn start' to run the client
+
+### To test endpoint
+
+- Run 'yarn test'
 
 ## Functional features
 
@@ -69,9 +75,15 @@
 [x] Top 5 most popular return stations for journeys starting from the station<br>
 [x] Top 5 most popular departure stations for journeys ending at the station<br>
 
+### Testing
+
+[x] Test endpoint GET /journeys<br>
+[x] Test endpoint GET /stations<br>
+[x] Test endpoint GET /stations/stats/departjourneys<br>
+[x] Test endpoint GET /stations/stats/returnjourneys<br>
+
 ## Code time
 
 - Total coding time: around 11 hours 28 minutes
 
 ![image](https://user-images.githubusercontent.com/39565575/212313529-3d5e2e3a-256a-4b8e-a880-b8ad26c95396.png)
-

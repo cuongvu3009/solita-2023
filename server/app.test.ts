@@ -1,7 +1,7 @@
 import { pool } from './src/db/db'
 
 describe('Journey endpoint test', function () {
-  describe('GET /journey', () => {
+  describe('GET /journeys', () => {
     it('should return filtered 100 journeys page 3', async () => {
       const req = {
         page: '3',
